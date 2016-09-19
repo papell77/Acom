@@ -1,0 +1,23 @@
+﻿Namespace Models
+
+    Public Class comune
+        Public Property ID As Integer
+        Public Property nome As String
+        Public Property CAP As String
+        Public Property provinciaID As Integer
+        Public Property annull As Boolean
+        Public Property created_by As String
+        Public Property created_date As Nullable(Of Date)
+        Public Property updated_by As String
+        Public Property updated_date As Nullable(Of Date)
+        Public Property rowvers As Byte() 'timestamp per optimistic concurrency
+
+        'navigation property verso provincia
+        Public Property provincia As provincia
+        'navigation property verso client
+        Public Property clients As List(Of client)
+        'navigation property verso office
+        Public Property offices As List(Of office)
+
+    End Class
+End Namespace

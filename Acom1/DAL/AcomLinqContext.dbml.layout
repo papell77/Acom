@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 39.75" name="AcomLinqContext">
+  <DataContextMoniker Name="/AcomLinqContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="76e7bc32-8df7-4acd-b7ed-1d769063742b" absoluteBounds="2.5, 0.5, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/clients" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95d287f2-9727-4ef6-9d88-81c356490818" absoluteBounds="2.5149999999999997, 0.96, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d7e4ca5-edec-4f0c-9d3d-878e41053775" absoluteBounds="5.25, 12.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/comunes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ff15313-a06c-4d95-b695-ede88c15085c" absoluteBounds="5.265, 13.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 14.1450512695312); (4.9375 : 14.1450512695312); (4.9375 : 9.00649251302083); (2.6875 : 9.00649251302083); (2.6875 : 7.55678548177083); (3.5000005 : 7.55678548177083); (3.5000005 : 7.46303548177083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AcomLinqContextDataContext/comunes/comunes_clients" />
+      <nodes>
+        <classShapeMoniker Id="3d7e4ca5-edec-4f0c-9d3d-878e41053775" />
+        <classShapeMoniker Id="76e7bc32-8df7-4acd-b7ed-1d769063742b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="427c17b0-8686-4e37-a990-b8356b5c003d" absoluteBounds="0.5, 0.625, 1.875, 3.8862125651041666">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/contactnames" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a286119d-56e0-46d2-a9da-96bf60273384" absoluteBounds="0.51500000000000012, 1.085, 1.8450000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.56810628255208); (2.375 : 2.56810628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AcomLinqContextDataContext/clients/clients_contactnames" />
+      <nodes>
+        <classShapeMoniker Id="76e7bc32-8df7-4acd-b7ed-1d769063742b" />
+        <classShapeMoniker Id="427c17b0-8686-4e37-a990-b8356b5c003d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="30dbb9ca-bf73-4cb8-826e-3342928703f1" absoluteBounds="0.5, 4.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOfficeDettaglio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71bfed22-e969-4b29-99d2-2a909e2c8d5b" absoluteBounds="0.51499999999999968, 5.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56c34b5e-db34-4b8f-b0f7-e347526984e4" absoluteBounds="4.75, 5.375, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewPricelist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb053fc0-8d12-4ecf-b528-a371c759f476" absoluteBounds="4.765, 5.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5dbf4823-90c8-4e6a-b0e1-53a896912d98" absoluteBounds="2.75, 7.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOfferTot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1eca8604-f6e7-4d38-b16c-90b7266fcc1f" absoluteBounds="2.7649999999999997, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eae38f29-893d-489c-becd-05f7f131baae" absoluteBounds="0.625, 9.125, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewContacts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cc16d45-a035-4ca9-b7dd-151398ff7b7b" absoluteBounds="0.63999999999999968, 9.585, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e997ed9-5d5e-4121-a23a-4066c91d4a01" absoluteBounds="0.625, 19.125, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOrderIns" />
+      <nestedChildShapes>
+        <elementListCompartment Id="134e3d17-055c-46b2-ad5d-33bf5d1ae389" absoluteBounds="0.63999999999999968, 19.585, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a91c5521-efdc-4531-92f9-3d5a852af64f" absoluteBounds="4.625, 0.5, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewVisit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12ffdfa3-6231-4f76-82e2-ee157596b4a4" absoluteBounds="4.64, 0.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0fdd1693-1af2-4b0a-8763-1a1455329714" absoluteBounds="0.5, 24.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewVisitReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="524785eb-8bde-42c0-b269-4a4a07516335" absoluteBounds="0.51499999999999968, 25.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3baa42d2-9197-495d-80bb-26c8cbe4ff6d" absoluteBounds="2.875, 9.25, 2, 8.3091455078125">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewClientDettaglio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45ef84e7-52f9-4a8e-b28b-f43e4a74887d" absoluteBounds="2.8899999999999997, 9.71, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="993307e4-f957-4a9b-8bdb-a04f1936f1f3" absoluteBounds="5.25, 15.625, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOffer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f810c11-3160-422b-a9cb-702618c0b06d" absoluteBounds="5.265, 16.085, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cfd2116-d9f1-4af6-96d5-2e3538c793d7" absoluteBounds="0.5, 30.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewAgentWorkVisit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e879679-3320-49c6-81ac-553eba962289" absoluteBounds="0.51499999999999968, 31.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a3b062-5c2d-49ec-b8aa-ba57d426a8b7" absoluteBounds="0.5, 32.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewAgentWorkOffer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="adf29fed-f49d-4297-bd59-1d76569f22a1" absoluteBounds="0.51499999999999968, 33.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb905266-06d6-4698-9916-ee9645ec9e8e" absoluteBounds="0.5, 34.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewAdminAgent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8792b4ee-e4b3-45a8-977a-4b834ade3964" absoluteBounds="0.51499999999999968, 35.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5670517-e13a-4de8-aaee-414aef4f5ca2" absoluteBounds="6.875, 0.625, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewClient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5c92a2f-4908-4a73-a763-040a93a4c044" absoluteBounds="6.89, 1.085, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0136dd76-438f-46d8-897c-665d4720d459" absoluteBounds="5.25, 8.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOffice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91e8b0b1-f832-4e1e-bd7f-e7c4c6bb3d78" absoluteBounds="5.265, 9.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="583d6a2d-7a64-437c-8ac2-b00d725d1988" absoluteBounds="6.875, 6.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewArticle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="644e3f16-287f-4b8a-b561-dc3781513a2b" absoluteBounds="6.89, 6.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9a10163-c029-48c8-a71b-24f8be9768b7" absoluteBounds="5.375, 26.625, 2, 12.9243798828125">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewReportOffer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7469bed4-333e-48cb-9656-7675d05d5da1" absoluteBounds="5.39, 27.085, 1.9700000000000002, 12.3643798828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ed09260-d27c-4cbe-8eb5-efaf9596fda0" absoluteBounds="2.875, 17.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/linq_offer_row" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b2a5f53-3200-40ae-9629-15b51b980c0b" absoluteBounds="2.8899999999999997, 18.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea94b393-cca1-4aad-8b9d-f5e420445e0d" absoluteBounds="5.375, 21.375, 2, 4.8477197265625">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOfferRowDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53483342-8f68-44c4-a66f-fdf289b6787c" absoluteBounds="5.39, 21.835, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef7aef61-a897-4adf-a7a6-a9f18a6cd358" absoluteBounds="2.875, 22.5, 2, 10.0398583984375">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOfferInsert" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6ebe384-f482-4e16-ba6b-5b8452d7fbbf" absoluteBounds="2.8899999999999997, 22.96, 1.9700000000000002, 9.4798583984375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fcec831-fed9-461d-824a-3437131de587" absoluteBounds="0.625, 13.375, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOrder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cda27c51-7cca-437d-a9d9-5c202f782843" absoluteBounds="0.63999999999999968, 13.835, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d7cb6780-47f6-45b9-bdcb-ffb155bad034" absoluteBounds="0.5, 27.125, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AcomLinqContextDataContext/ViewOrderNoProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de2f8db1-24cf-4c3b-8c8f-43373d2ecb20" absoluteBounds="0.51499999999999968, 27.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="Acom1.ajaxservice" CodeBehind="ajaxservice.svc.vb" %>

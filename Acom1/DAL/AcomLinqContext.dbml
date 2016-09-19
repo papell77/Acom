@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Acomdb" Class="AcomLinqContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;Initial Catalog=Acomdb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AcomdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.clients" Member="clients">
+    <Type Name="clients">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codice" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="piva" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pivaCEE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="invio_fattura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comuneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="canalID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="rowvers" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="banca" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iban" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fatturato" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fatturato_potenz" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fido_richiesto" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fido_concesso" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="scadenza_fido" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="fondazione" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="possedimenti" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dipendenti" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data_aggiornamento" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="clients_contactnames" Member="contactnames" ThisKey="ID" OtherKey="clientID" Type="contactnames" />
+      <Association Name="comunes_clients" Member="comunes" ThisKey="comuneID" OtherKey="ID" Type="comunes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.comunes" Member="comunes">
+    <Type Name="comunes">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="rowvers" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="comunes_clients" Member="clients" ThisKey="ID" OtherKey="comuneID" Type="clients" />
+    </Type>
+  </Table>
+  <Table Name="dbo.contactnames" Member="contactnames">
+    <Type Name="contactnames">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cognome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cellulare" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="funzione" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="rowvers" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="clients_contactnames" Member="clients" ThisKey="clientID" OtherKey="ID" Type="clients" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOfficeDettaglio" Member="ViewOfficeDettaglio">
+    <Type Name="ViewOfficeDettaglio">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provincia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comuneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comune" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewPricelist" Member="ViewPricelist">
+    <Type Name="ViewPricelist">
+      <Column Name="article_code" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="article_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prezzo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="data_decorrenza" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="productID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="product_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOfferTot" Member="ViewOfferTot">
+    <Type Name="ViewOfferTot">
+      <Column Name="offerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totale_offer" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewContacts" Member="ViewContacts">
+    <Type Name="ViewContacts">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cognome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cellulare" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="funzione" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="office_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOrderIns" Member="ViewOrderIns">
+    <Type Name="ViewOrderIns">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="importo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="order_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="order_num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="order_sap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_impianto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_offerta" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_offertaest" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_ordinecliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewVisit" Member="ViewVisit">
+    <Type Name="ViewVisit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="motivo_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="motivo_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ordine_num" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="preventivo_num" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data_prossima" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="stato" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="offerta_est" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data_ins" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedby" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data_upd" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewVisitReport" Member="ViewVisitReport">
+    <Type Name="ViewVisitReport">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="preventivo_num" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prevSi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewClientDettaglio" Member="ViewClientDettaglio">
+    <Type Name="ViewClientDettaglio">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codice" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="piva" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pivaCEE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provincia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comuneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comune" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="canalID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="canal_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="banca" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dipendenti" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fatturato" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fatturato_potenz" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fido_concesso" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fido_richiesto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="iban" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="invio_fattura" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fondazione" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="possedimenti" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="scadenza_fido" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data_aggiornamento" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pagamento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="transportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trasporto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOffer" Member="ViewOffer">
+    <Type Name="ViewOffer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_est" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="offer_vers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_code" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="riferimento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="stato" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="importo" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="product_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewAgentWorkVisit" Member="ViewAgentWorkVisit">
+    <Type Name="ViewAgentWorkVisit">
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewAgentWorkOffer" Member="ViewAgentWorkOffer">
+    <Type Name="ViewAgentWorkOffer">
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewAdminAgent" Member="ViewAdminAgent">
+    <Type Name="ViewAdminAgent">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="offers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewClient" Member="ViewClient">
+    <Type Name="ViewClient">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codice" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="piva" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provincia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comuneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comune" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="canalID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="canal_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data_aggiornamento" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOffice" Member="ViewOffice">
+    <Type Name="ViewOffice">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="provinciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provincia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comuneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comune" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewArticle" Member="ViewArticle">
+    <Type Name="ViewArticle">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="article_code" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="article_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prezzo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="data_decorrenza" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewReportOffer" Member="ViewReportOffer">
+    <Type Name="ViewReportOffer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_code" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="offer_vers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_est" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="riferimento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="stato" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="email_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comune_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provincia_cliente" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="email_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comune_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provincia_filiale" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentname" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="consegna" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cognome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nome_contatto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pagamento" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="transportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trasporto" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="costo_trasporto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="data_valid" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="imballo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="importo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="resaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="resa_desc" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="garanziaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="garanzia_desc" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="article_code" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="article_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="quantita" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prezzo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto4" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto5" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto6" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="totale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="offerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rigaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="noteRiga" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prezzo_netto" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.offer_row" Member="linq_offer_row">
+    <Type Name="linq_offer_row">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rigaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantita" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prezzo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto4" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto5" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto6" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="totale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="offerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="articleID" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="rowvers" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOfferRowDetail" Member="ViewOfferRowDetail">
+    <Type Name="ViewOfferRowDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="articleID" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="article_code" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="article_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prezzo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="quantita" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="rigaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sconto1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto4" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto5" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sconto6" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="totale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="offerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOfferInsert" Member="ViewOfferInsert">
+    <Type Name="ViewOfferInsert">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_code" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="offer_vers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="offer_est" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="riferimento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="stato" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="email_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comune_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provincia_cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="email_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cap_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="indirizzo_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="comune_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="provincia_filiale" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="consegna" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cognome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nome_contatto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pagamento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="transportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trasporto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="costo_trasporto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="data_valid" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="imballo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="importo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="resaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="resa_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="garanziaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="garanzia_desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOrder" Member="ViewOrder">
+    <Type Name="ViewOrder">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="order_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="order_sap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="importo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="rif_impianto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_offerta" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="annull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="canalID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="canal_code" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="productID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="product_name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="rif_offertaest" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_ordinecliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_by" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="family_name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewOrderNoProduct" Member="ViewOrderNoProduct">
+    <Type Name="ViewOrderNoProduct">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="order_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="order_sap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rif_impianto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ragione_sociale" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="officeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="rif_ordinecliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="canalID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="familyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

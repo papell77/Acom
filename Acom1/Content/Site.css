@@ -1,0 +1,109 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+
+.navbar-nav > li {
+    font-size:18px;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    height:50px;
+    vertical-align:bottom;
+    color:#ffffff;
+}
+
+.navbar-inverse{
+    background-color:#428bca;
+    border-color:#357ebd;
+}
+
+.navbar-inverse .navbar-fixed-top .navbar-collapse{
+    background-color:#428bca;
+    /*border-color:#357ebd;
+    height:50px;*/
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color:#3276b1;
+}
+
+.acomtable{
+    border-collapse:separate;
+    border-spacing:0px 10px;
+    width:100%;
+}
+
+.acomtable-section-intest td{
+    height:30px;
+    font-weight:bold;
+    font-size:18px;
+    border-top:1px solid;
+    border-bottom:1px solid;
+}
+
+.updateprogress-modal{
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: Black;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    -moz-opacity: 0.8;
+}
+
+.updateprogress-center{
+     z-index: 1000;
+    margin: 300px auto;
+    padding: 10px;
+    background-color: White;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+    font-size:18px;
+    width:300px;
+}
+
+ .modalBackground {
+    background-color: Black;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+ }
+

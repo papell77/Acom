@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="AcomSite" />
+  <setParameter name="AcomdbConnectionString-Web.config Connection String" value="Data Source=GAMBIT;Database=acomDb;Integrated Security=true" />
+  <setParameter name="Acom1.ApplicationDbContext-Web.config Connection String" value="Acom1.ApplicationDbContext_ConnectionString" />
+</parameters>
