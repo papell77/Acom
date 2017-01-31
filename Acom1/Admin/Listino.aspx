@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="Listino" Language="vb" AutoEventWireup="false" MasterPageFile="~/Admin/AdminMaster.master" CodeBehind="Listino.aspx.vb" Inherits="Acom1.Listino" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="OtherContent" runat="server">
     <h3>Listino prezzi</h3>
-    
+    <p style="padding:10px">
+        <asp:Label Text="" ID="errmsg" runat="server" Visible="false" EnableViewState="false" CssClass="alert alert-danger" />
+    </p>
     <asp:Table runat="server" ID="TableSearchProduct" Width="30%">
         <asp:TableRow>
             <asp:TableCell runat="server" ID="lblarticolo" Font-Bold="true">Codice articolo</asp:TableCell>
@@ -32,15 +34,32 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell runat="server" ID="lbldata" Font-Bold="true">Data decorrenza</asp:TableCell>
+            <asp:TableCell runat="server" ID="lbldata" Font-Bold="true" Wrap="false">Data decorrenza DAL</asp:TableCell>
             <asp:TableCell runat="server" ID="txtdata">
-                    <asp:TextBox runat="server" ID="data" CssClass="form-control"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="data" CssClass="form-control"></asp:TextBox>
                     <asp:CalendarExtender Format="dd/MM/yyyy" TargetControlID="data" runat="server" ID="calext_datadecorrenza" OnLoad="calext_datadecorrenza_Load" />
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>
+        <asp:TableRow>
+            <asp:TableCell runat="server" ID="lbldataAL" Font-Bold="true">Data decorrenza AL</asp:TableCell>
+            <asp:TableCell runat="server" ID="txtdataAL">
+                    <asp:TextBox runat="server" ID="dataAL" CssClass="form-control"></asp:TextBox>
+                    <asp:CalendarExtender Format="dd/MM/yyyy" TargetControlID="dataAL" runat="server" ID="calext_datadecorrenzaAL" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell runat="server" ID="lblAnnull" Font-Bold="true" Wrap="true">Escludi Fuori produzione</asp:TableCell>
+            <asp:TableCell runat="server" ID="txtannull">
+                <asp:CheckBox runat="server" ID="checkAnnull"  /><br />
+            </asp:TableCell>
+        </asp:TableRow>
+        </asp:Table>
     <br />
     <asp:Button runat="server" ID="btncerca" Text="Cerca articolo" OnClick="btncerca_Click" CssClass="btn btn-primary btn-hover" />
+    <asp:Button runat="server" ID="btnexport" Text="Esporta in Excel" OnClick="btnexport_Click" CssClass="btn btn-primary btn-hover" />
+    <br />
+    <br />
+    <asp:Label Text="" runat="server" ID="recordCount" Font-Bold="true" />
     <br />
     <br />
     <asp:GridView  runat="server" ID="GridViewPrice" AutoGenerateEditButton="true" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="article_code, data_decorrenza" SelectMethod="GridViewPrice_GetData" UpdateMethod="GridViewPrice_UpdateItem" PageSize="30" CssClass="table table-hover table-bordered table-responsive" HeaderStyle-BackColor="#DCF5FD" HeaderStyle-Font-Bold="true" >
@@ -75,8 +94,9 @@
                     <asp:Label runat="server" ID="data_decorrenza" Text='<%# Eval("data_decorrenza", "{0:dd/MM/yyyy}")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox runat="server" ID="data_decorrenza" Text='<%# Bind("data_decorrenza", "{0:dd/MM/yyyy}")%>'></asp:TextBox><br />
-                    <asp:CalendarExtender Format="dd/MM/yyyy" TargetControlID="data_decorrenza" runat="server" ID="calext_datadecorrenza" />
+                    <asp:Label runat="server" ID="Label1" Text='<%# Eval("data_decorrenza", "{0:dd/MM/yyyy}")%>'></asp:Label>
+                    <%--<asp:TextBox runat="server" ID="data_decorrenza" Text='<%# Bind("data_decorrenza", "{0:dd/MM/yyyy}")%>'></asp:TextBox><br />
+                    <asp:CalendarExtender Format="dd/MM/yyyy" TargetControlID="data_decorrenza" runat="server" ID="calext_datadecorrenza" />--%>
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Prodotto">
@@ -99,7 +119,7 @@
                     </asp:DropDownList>
                 </EditItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Fuori produzione">
+            <asp:TemplateField HeaderText="Fuori produzione" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <asp:CheckBox ID="annull" runat="server" Checked='<%# Eval("annull") %>' Enabled="false" />
                 </ItemTemplate>

@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Listino
 
     '''<summary>
+    '''Controllo errmsg.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents errmsg As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Controllo TableSearchProduct.
     '''</summary>
     '''<remarks>
@@ -167,6 +176,69 @@ Partial Public Class Listino
     Protected WithEvents calext_datadecorrenza As Global.AjaxControlToolkit.CalendarExtender
 
     '''<summary>
+    '''Controllo lbldataAL.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents lbldataAL As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Controllo txtdataAL.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents txtdataAL As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Controllo dataAL.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents dataAL As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Controllo calext_datadecorrenzaAL.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents calext_datadecorrenzaAL As Global.AjaxControlToolkit.CalendarExtender
+
+    '''<summary>
+    '''Controllo lblAnnull.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents lblAnnull As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Controllo txtannull.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents txtannull As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Controllo checkAnnull.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents checkAnnull As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Controllo btncerca.
     '''</summary>
     '''<remarks>
@@ -174,6 +246,24 @@ Partial Public Class Listino
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents btncerca As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Controllo btnexport.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents btnexport As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Controllo recordCount.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents recordCount As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Controllo GridViewPrice.

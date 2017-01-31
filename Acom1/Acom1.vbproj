@@ -372,7 +372,9 @@
       <DependentUpon>ClientDataSet.xsd</DependentUpon>
     </Content>
     <None Include="My Project\PublishProfiles\acomFileSystem.pubxml" />
+    <None Include="My Project\PublishProfiles\AcomFtp.pubxml" />
     <None Include="My Project\PublishProfiles\acomGambit.pubxml" />
+    <None Include="My Project\PublishProfiles\AcomGambitWebDeploy.pubxml" />
     <None Include="My Project\PublishProfiles\acomsrl %282%29.pubxml" />
     <None Include="My Project\PublishProfiles\acomsrl %283%29.pubxml" />
     <None Include="My Project\PublishProfiles\acomsrl.pubxml" />
